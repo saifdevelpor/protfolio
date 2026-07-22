@@ -263,6 +263,14 @@
         "A trousers and shirts e-commerce store where users can browse products, view details, add items to cart, and place orders online.",
       tech: "HTML, CSS, JavaScript, Local Storage",
     },
+
+    shopify: {
+      title: "HandCrafted Store",
+      image: "shopify.png",
+      description:
+        "Handcrafted Store is a modern and fully responsive Shopify eCommerce website designed with a clean, elegant, and user-friendly interface. The store focuses on delivering a seamless shopping experience through intuitive navigation, attractive product showcases, secure checkout integration, and mobile-optimized performance. I customized the layout, refined the user experience, and ensured the website maintains a premium visual identity while providing fast loading speeds and a smooth purchasing journey across all devices.",
+      tech: "Shopify, Liquid, JavaScript (ES6), Responsive Design",
+    },
   };
 
   const projectModal = document.getElementById("projectModal");
