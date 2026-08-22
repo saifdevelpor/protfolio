@@ -279,6 +279,14 @@
         "Al Suffha Online Quran Academy is a modern and fully responsive online Quran learning platform designed with a clean, professional, and user-friendly interface for students of all ages.",
       tech: "HTML, CSS, JavaScript, Bootstrape, Responsive Design",
     },
+
+    sajjadstore: {
+      title: "Sajjad Discount Mart",
+      image: "sajjadstore.png",
+      description:
+        "Sajjad Discount Mart e-commerce store where users can browse products, view details, add items to cart, and place orders online.",
+      tech: "Shopify, Liquid, JavaScript (ES6), Responsive Design",
+    },
   };
 
   const projectModal = document.getElementById("projectModal");
