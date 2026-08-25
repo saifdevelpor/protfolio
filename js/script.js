@@ -287,6 +287,14 @@
         "Sajjad Discount Mart e-commerce store where users can browse products, view details, add items to cart, and place orders online.",
       tech: "Shopify, Liquid, JavaScript (ES6), Responsive Design",
     },
+
+    pos: {
+      title: "Point Of Sale(POS)",
+      image: "POS.png",
+      description:
+        "Point of Sale (POS) System is a Laravel-based business management application that helps manage products, categories, sales, users, and business operations through a modern and responsive dashboard. Built with Laravel, PHP, MySQL, Blade, Tailwind CSS, and JavaScript.",
+      tech: "JS, Laravel, JavaScript (ES6), Responsive Design",
+    },
   };
 
   const projectModal = document.getElementById("projectModal");
