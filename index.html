@@ -487,118 +487,453 @@
   </section>
 
   <!-- Tech Stack -->
-  <style>
-    /* Tech Stack Cards - White Text */
+ <!-- ================= TECH STACK ================= -->
+
+<style>
+  /* Tech Stack Section */
+  .techstack-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .techstack-section::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 80px;
+    left: -180px;
+    background: rgba(13, 110, 253, 0.06);
+    border-radius: 50%;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+  .techstack-section::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: -150px;
+    bottom: 50px;
+    background: rgba(13, 110, 253, 0.05);
+    border-radius: 50%;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+
+  /* Section Header */
+
+  .techstack-header {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 55px;
+  }
+
+  .techstack-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0d6efd;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .techstack-label::before {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #0d6efd;
+  }
+
+  .techstack-title {
+    font-size: clamp(32px, 4vw, 48px);
+    color: #151515;
+    margin-bottom: 12px;
+  }
+
+  .techstack-subtitle {
+    max-width: 600px;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+
+  /* Cards */
+
+  .tech-stack-card {
+    position: relative;
+    height: 100%;
+    padding: 30px;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    z-index: 2;
+  }
+
+  .tech-stack-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    right: -60px;
+    background: rgba(13, 110, 253, 0.12);
+    border-radius: 50%;
+    transition: 0.35s ease;
+  }
+
+  .tech-stack-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(13, 110, 253, 0.35);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  }
+
+  .tech-stack-card:hover::before {
+    transform: scale(1.5);
+  }
+
+
+  /* Icon */
+
+  .tech-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    background: rgba(13, 110, 253, 0.12);
+    color: #4d9aff;
+
+    font-size: 23px;
+    margin-bottom: 22px;
+
+    transition: all 0.3s ease;
+  }
+
+  .tech-stack-card:hover .tech-icon {
+    background: #0d6efd;
+    color: #ffffff;
+    transform: rotate(-5deg);
+  }
+
+
+  /* Card Heading */
+
+  .tech-card-title {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .tech-card-description {
+    color: #9ca3af;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+
+  /* Technology Tags */
+
+  .tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tech-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 11px;
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #e5e7eb;
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+  }
+
+  .tech-badge:hover {
+    background: rgba(13, 110, 253, 0.18);
+    border-color: rgba(13, 110, 253, 0.35);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+
+  /* Card Number */
+
+  .tech-card-number {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    color: rgba(255, 255, 255, 0.08);
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+
+  /* Responsive */
+
+  @media (max-width: 576px) {
+
     .tech-stack-card {
-      background: #111827;
+      padding: 25px;
     }
 
-    .tech-stack-card h6 {
-      color: #ffffff !important;
+    .techstack-header {
+      margin-bottom: 35px;
     }
 
-    .tech-stack-card .tech-badge {
-      color: #ffffff;
+    .tech-card-number {
+      font-size: 30px;
     }
-  </style>
-  <section class="section-py bg-section scroll-reveal" id="techstack">
-    <div class="container">
-      <div class="section-header text-center mb-5 reveal-up">
-        <h2 class="section-title fw-bold">Tech Stack</h2>
-        <div class="section-underline mx-auto"></div>
-        <p class="section-subtitle text-muted mt-3">
-          Technologies I use daily
-        </p>
+  }
+</style>
+
+
+<section class="section-py bg-section techstack-section scroll-reveal" id="techstack">
+
+  <div class="container position-relative">
+
+    <!-- Section Header -->
+    <div class="techstack-header text-center reveal-up">
+
+      <div class="techstack-label justify-content-center">
+        My Expertise
       </div>
 
-      <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-md-6 col-lg-4 reveal-up" data-delay="0">
-          <div class="tech-stack-card card border-0 shadow-sm rounded-4 h-100 hover-lift">
-            <div class="card-body p-4 text-center">
-              <h6 class="text-primary fw-semibold mb-3">Frontend</h6>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="tech-badge">HTML</span>
-                <span class="tech-badge">CSS</span>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">Bootstrap</span>
-                <span class="tech-badge">Tailwind</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <h2 class="techstack-title text-white fw-bold">
+        Technologies I Work With
+      </h2>
 
-        <!-- Card 2 -->
-        <div class="col-md-6 col-lg-4 reveal-up" data-delay="1">
-          <div class="tech-stack-card card border-0 shadow-sm rounded-4 h-100 hover-lift">
-            <div class="card-body p-4 text-center">
-              <h6 class="text-primary fw-semibold mb-3">Backend</h6>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="tech-badge">PHP</span>
-                <span class="tech-badge">Laravel</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <p class="techstack-subtitle text-muted">
+        A collection of technologies and tools I use to build
+        modern, scalable and high-performance web applications.
+      </p>
 
-        <!-- Card 3 -->
-        <div class="col-md-6 col-lg-4 reveal-up" data-delay="2">
-          <div class="tech-stack-card card border-0 shadow-sm rounded-4 h-100 hover-lift">
-            <div class="card-body p-4 text-center">
-              <h6 class="text-primary fw-semibold mb-3">AI Tools</h6>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="tech-badge">ChatGPT</span>
-                <span class="tech-badge">Claude AI</span>
-                <span class="tech-badge">Cursor AI</span>
-                <span class="tech-badge">Codex</span>
-                <span class="tech-badge">DeepSeek</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-6 col-lg-4 reveal-up" data-delay="3">
-          <div class="tech-stack-card card border-0 shadow-sm rounded-4 h-100 hover-lift">
-            <div class="card-body p-4 text-center">
-              <h6 class="text-primary fw-semibold mb-3">Database</h6>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="tech-badge">MySQL</span>
-                <span class="tech-badge">Database Design</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="col-md-6 col-lg-4 reveal-up" data-delay="4">
-          <div class="tech-stack-card card border-0 shadow-sm rounded-4 h-100 hover-lift">
-            <div class="card-body p-4 text-center">
-              <h6 class="text-primary fw-semibold mb-3">Development Tools</h6>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="tech-badge">GitHub</span>
-                <span class="tech-badge">VS Code</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="col-md-6 col-lg-4 reveal-up" data-delay="5">
-          <div class="tech-stack-card card border-0 shadow-sm rounded-4 h-100 hover-lift">
-            <div class="card-body p-4 text-center">
-              <h6 class="text-primary fw-semibold mb-3">CMS & Deployment</h6>
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="tech-badge">cPanel</span>
-                <span class="tech-badge">Hosting</span>
-                <span class="tech-badge">Deployment</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+
+
+    <!-- Cards -->
+    <div class="row g-4">
+
+
+      <!-- ================= FRONTEND ================= -->
+
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="0">
+
+        <div class="tech-stack-card">
+
+          <span class="tech-card-number">01</span>
+
+          <div class="tech-icon">
+            <i class="bi bi-window"></i>
+          </div>
+
+          <h3 class="tech-card-title">
+            Frontend
+          </h3>
+
+          <p class="tech-card-description">
+            Creating responsive and user-friendly interfaces
+            with modern frontend technologies.
+          </p>
+
+          <div class="tech-badges">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">Tailwind</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= BACKEND ================= -->
+
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="1">
+
+        <div class="tech-stack-card">
+
+          <span class="tech-card-number">02</span>
+
+          <div class="tech-icon">
+            <i class="bi bi-server"></i>
+          </div>
+
+          <h3 class="tech-card-title">
+            Backend
+          </h3>
+
+          <p class="tech-card-description">
+            Developing secure and scalable backend systems
+            using PHP and Laravel.
+          </p>
+
+          <div class="tech-badges">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">Laravel</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= AI ================= -->
+
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="2">
+
+        <div class="tech-stack-card">
+
+          <span class="tech-card-number">03</span>
+
+          <div class="tech-icon">
+            <i class="bi bi-robot"></i>
+          </div>
+
+          <h3 class="tech-card-title">
+            AI Tools
+          </h3>
+
+          <p class="tech-card-description">
+            Using AI-powered tools to improve development
+            speed, productivity and problem solving.
+          </p>
+
+          <div class="tech-badges">
+            <span class="tech-badge">ChatGPT</span>
+            <span class="tech-badge">Claude AI</span>
+            <span class="tech-badge">Cursor AI</span>
+            <span class="tech-badge">Codex</span>
+            <span class="tech-badge">DeepSeek</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= DATABASE ================= -->
+
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="3">
+
+        <div class="tech-stack-card">
+
+          <span class="tech-card-number">04</span>
+
+          <div class="tech-icon">
+            <i class="bi bi-database"></i>
+          </div>
+
+          <h3 class="tech-card-title">
+            Database
+          </h3>
+
+          <p class="tech-card-description">
+            Designing structured databases and managing
+            application data efficiently.
+          </p>
+
+          <div class="tech-badges">
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">Database Design</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= TOOLS ================= -->
+
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="4">
+
+        <div class="tech-stack-card">
+
+          <span class="tech-card-number">05</span>
+
+          <div class="tech-icon">
+            <i class="bi bi-tools"></i>
+          </div>
+
+          <h3 class="tech-card-title">
+            Development Tools
+          </h3>
+
+          <p class="tech-card-description">
+            Tools I use for coding, version control and
+            managing development workflows.
+          </p>
+
+          <div class="tech-badges">
+            <span class="tech-badge">GitHub</span>
+            <span class="tech-badge">VS Code</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= DEPLOYMENT ================= -->
+
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="5">
+
+        <div class="tech-stack-card">
+
+          <span class="tech-card-number">06</span>
+
+          <div class="tech-icon">
+            <i class="bi bi-cloud-arrow-up"></i>
+          </div>
+
+          <h3 class="tech-card-title">
+            CMS & Deployment
+          </h3>
+
+          <p class="tech-card-description">
+            Deploying websites and managing hosting
+            environments for production applications.
+          </p>
+
+          <div class="tech-badges">
+            <span class="tech-badge">cPanel</span>
+            <span class="tech-badge">Hosting</span>
+            <span class="tech-badge">Deployment</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- Experience -->
   <section class="section-py scroll-reveal" id="experience">
