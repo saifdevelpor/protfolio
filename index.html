@@ -79,106 +79,160 @@
     <div class="container position-relative">
       <div class="row align-items-center g-5">
 
-        <!-- Image Side -->
+        <!-- ================= IMAGE SIDE ================= -->
         <div class="col-lg-6 order-lg-2 text-center">
           <div class="hero-image-wrapper mx-auto hero-animate hero-delay-4">
-            <img src="ChatGPT Image Aug 5, 2026, 12_32_43 PM.png" alt="M Saif Ali"
-              class="hero-profile-img shadow-lg img-fluid" />
 
-            <div class="hero-status-card shadow-sm">
+            <div class="hero-image-ring"></div>
+
+            <img src="ChatGPT Image Aug 5, 2026, 12_32_43 PM.png" alt="M Saif Ali" class="hero-profile-img img-fluid">
+
+            <!-- Floating Status -->
+            <div class="hero-status-card">
               <span class="status-dot"></span>
-              Available for Laravel Projects
+              <div>
+                <small>Currently</small>
+                <strong>Available for Projects</strong>
+              </div>
             </div>
+
+            <!-- Floating Tech Card -->
+            <div class="hero-tech-card">
+              <i class="bi bi-code-slash"></i>
+              <span>Laravel<br>Developer</span>
+            </div>
+
           </div>
         </div>
 
-        <!-- Content Side -->
+
+        <!-- ================= CONTENT SIDE ================= -->
         <div class="col-lg-6 order-lg-1">
 
-          <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-3 hero-animate hero-delay-1"
-            style="margin-top: 10px;">
-            PHP Laravel Developer
-          </span>
+          <!-- Small Intro -->
+          <div class="hero-intro hero-animate hero-delay-1">
+            <span class="intro-line"></span>
+            <span>PHP & Laravel Developer</span>
+          </div>
 
-          <h1 class="hero-title fw-bold mb-3 hero-animate hero-delay-2">
-            Hi, I'm <span class="text-primary">M Saif Ali</span>
+
+          <!-- Heading -->
+          <h1 class="hero-title fw-bold hero-animate hero-delay-2">
+            Hi, I'm
+            <span class="text-primary">M Saif Ali</span>
+            <br>
+            <span class="hero-heading-light">
+              I build modern web applications.
+            </span>
           </h1>
 
-          <p class="hero-subtitle text-muted fs-5 mb-3 hero-animate hero-delay-3">
+
+          <!-- Description -->
+          <p class="hero-subtitle text-muted hero-animate hero-delay-3">
             A passionate PHP Laravel Developer with 1.5+ years of experience
-            building modern, secure, and scalable web applications.
+            building secure, scalable and user-focused web applications.
           </p>
 
-          <p class="text-muted mb-4 hero-animate hero-delay-3">
-            I specialize in developing dynamic websites, admin panels, REST APIs,
-            ecommerce systems, and custom Laravel-based business solutions.
+
+          <p class="hero-description text-muted hero-animate hero-delay-3">
+            I specialize in Laravel applications, REST APIs, admin dashboards,
+            ecommerce systems and custom business solutions.
           </p>
 
-          <!-- Personal Info -->
-          <div class="d-flex flex-wrap gap-3 mb-4 hero-animate hero-delay-4">
-            <span class="exp-badge">
-              <i class="bi bi-geo-alt me-2"></i>Pakistan
-            </span>
 
-            <span class="exp-badge">
-              <i class="bi bi-code-slash me-2"></i>Backend Developer
-            </span>
+          <!-- ================= META INFO ================= -->
+          <div class="hero-meta hero-animate hero-delay-4">
 
-            <span class="exp-badge">
-              <i class="bi bi-building me-2"></i>WebCrazier
-            </span>
+            <div class="meta-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>Pakistan</span>
+            </div>
+
+            <div class="meta-divider"></div>
+
+            <div class="meta-item">
+              <i class="bi bi-briefcase"></i>
+              <span>1.5+ Years Experience</span>
+            </div>
+
+            <div class="meta-divider"></div>
+
+            <div class="meta-item">
+              <i class="bi bi-building"></i>
+              <span>WebCrazier</span>
+            </div>
+
           </div>
 
-          <!-- Skills Tags -->
-          <div class="d-flex flex-wrap gap-2 mb-4 hero-animate hero-delay-4">
-            <span class="badge bg-light text-dark border px-3 py-2">PHP</span>
-            <span class="badge bg-light text-dark border px-3 py-2">Laravel</span>
-            <span class="badge bg-light text-dark border px-3 py-2">MySQL</span>
-            <span class="badge bg-light text-dark border px-3 py-2">REST API</span>
-            <span class="badge bg-light text-dark border px-3 py-2">Bootstrap</span>
-            <span class="badge bg-light text-dark border px-3 py-2">JavaScript</span>
+
+          <!-- ================= SKILLS ================= -->
+          <div class="hero-skills hero-animate hero-delay-4">
+
+            <span>PHP</span>
+            <span>Laravel</span>
+            <span>MySQL</span>
+            <span>REST API</span>
+            <span>Bootstrap</span>
+            <span>JavaScript</span>
+
           </div>
 
-          <!-- Buttons -->
-          <div class="d-flex flex-wrap gap-3 hero-animate hero-delay-4">
-            <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-4 smooth-scroll btn-glow">
-              <i class="bi bi-briefcase me-2"></i>Contact Me
+
+          <!-- ================= ACTIONS ================= -->
+          <div class="hero-actions hero-animate hero-delay-4">
+
+            <!-- Main Button -->
+            <a href="#contact" class="hero-primary-btn smooth-scroll">
+              <span>Let's Work Together</span>
+              <i class="bi bi-arrow-up-right"></i>
             </a>
 
-            <a href="#projects" class="btn btn-outline-primary btn-lg rounded-pill px-4 smooth-scroll">
-              <i class="bi bi-folder me-2"></i>Projects
+            <!-- Text Links -->
+            <a href="#projects" class="hero-text-link smooth-scroll">
+              View Projects
+              <i class="bi bi-arrow-right"></i>
             </a>
 
-            <a href="Saif Ali Latest CV Resume.pdf" target="_blank" download="M-Saif-Ali-CV.pdf"
-              class="btn btn-outline-primary btn-lg rounded-pill px-4">
-              <i class="bi bi-download me-2"></i>Download CV
+            <a href="Saif Ali Latest CV Resume.pdf" target="_blank" download="M-Saif-Ali-CV.pdf" class="hero-text-link">
+              Download CV
+              <i class="bi bi-download"></i>
             </a>
+
           </div>
 
-          <!-- Stats -->
-          <div class="mt-4 d-flex flex-wrap gap-3 hero-animate hero-delay-5">
-            <span class="exp-badge">
-              <i class="bi bi-briefcase me-2"></i>1.5+ Years Experience
-            </span>
 
-            <span class="exp-badge">
-              <i class="bi bi-laptop me-2"></i>Laravel Projects
-            </span>
+          <!-- ================= STATS ================= -->
+          <div class="hero-stats hero-animate hero-delay-5">
 
-            <span class="exp-badge">
-              <i class="bi bi-check-circle me-2"></i>Clean & Scalable Code
-            </span>
+            <div class="hero-stat">
+              <strong>1.5+</strong>
+              <span>Years Experience</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>Laravel</strong>
+              <span>Backend Expertise</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>Clean</strong>
+              <span>Scalable Code</span>
+            </div>
+
           </div>
 
         </div>
       </div>
     </div>
 
+
+    <!-- Scroll Indicator -->
     <div class="hero-scroll-indicator">
       <a href="#about" class="smooth-scroll">
         <i class="bi bi-chevron-double-down"></i>
       </a>
     </div>
+
   </section>
 
   <!-- About -->
@@ -195,8 +249,8 @@
         <div class="col-lg-4 reveal-up" data-delay="0">
           <div class="about-profile-wrapper text-center">
             <div class="about-avatar-wrap mx-auto mb-4">
-              <img src="https://ui-avatars.com/api/?name=M+Saif+Ali&size=280&background=0d6efd&color=fff&bold=true"
-                alt="M Saif Ali" class="about-avatar rounded-4 img-fluid" />
+              <img src="ChatGPT Image Aug 5, 2026, 12_32_43 PM.png" alt="M Saif Ali"
+                class="about-avatar rounded-4 img-fluid" />
             </div>
             <div class="about-highlights d-flex flex-column gap-3 text-start">
               <div class="about-highlight-item d-flex align-items-center gap-3 p-3 rounded-3">
@@ -433,6 +487,20 @@
   </section>
 
   <!-- Tech Stack -->
+  <style>
+    /* Tech Stack Cards - White Text */
+    .tech-stack-card {
+      background: #111827;
+    }
+
+    .tech-stack-card h6 {
+      color: #ffffff !important;
+    }
+
+    .tech-stack-card .tech-badge {
+      color: #ffffff;
+    }
+  </style>
   <section class="section-py bg-section scroll-reveal" id="techstack">
     <div class="container">
       <div class="section-header text-center mb-5 reveal-up">
@@ -553,7 +621,7 @@
               <div class="timeline-content card border-0 shadow-sm rounded-4 p-4">
                 <div class="d-flex justify-content-between flex-wrap gap-2">
                   <h5 class="fw-semibold mb-1">WebCrazier</h5>
-                  <span class="badge bg-primary-subtle text-primary">
+                  <span class="badge bg-primary-subtle text-white">
                     10 Aug 2025 – 30 June 2025
                   </span>
                 </div>
@@ -573,7 +641,7 @@
               <div class="timeline-content card border-0 shadow-sm rounded-4 p-4">
                 <div class="d-flex justify-content-between flex-wrap gap-2">
                   <h5 class="fw-semibold mb-1">ExlonTech</h5>
-                  <span class="badge bg-primary-subtle text-primary">
+                  <span class="badge bg-primary-subtle text-white">
                     10 March 2025 - 08 Aug 2025
                   </span>
                 </div>
@@ -593,7 +661,7 @@
               <div class="timeline-content card border-0 shadow-sm rounded-4 p-4">
                 <div class="d-flex justify-content-between flex-wrap gap-2">
                   <h5 class="fw-semibold mb-1">Pak Freelance</h5>
-                  <span class="badge bg-primary-subtle text-primary">
+                  <span class="badge bg-primary-subtle text-white">
                     10 Nov 2024 - 08 March 2025
                   </span>
                 </div>
@@ -613,7 +681,7 @@
               <div class="timeline-content card border-0 shadow-sm rounded-4 p-4">
                 <div class="d-flex justify-content-between flex-wrap gap-2">
                   <h5 class="fw-semibold mb-1">Bytes IT Center</h5>
-                  <span class="badge bg-primary-subtle text-primary">
+                  <span class="badge bg-primary-subtle text-white">
                     16 March 2024 - 31 Oct 2024
                   </span>
                 </div>
@@ -1167,8 +1235,7 @@
             data-bs-toggle="modal" data-bs-target="#projectModal" data-project="pos" data-live="#">
             <div class="project-img-placeholder project-browser card-img-top">
               <div class="browser-bar"><span></span><span></span><span></span></div>
-              <img src="POS.png" alt="POS" class="img-fluid project-image"
-                data-image="POS.png" />
+              <img src="POS.png" alt="POS" class="img-fluid project-image" data-image="POS.png" />
             </div>
 
             <div class="card-body p-4">
