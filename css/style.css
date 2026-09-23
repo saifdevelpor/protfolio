@@ -247,3 +247,7 @@
 .certificate-info p{font-size:.72rem}
 .certificate-link{margin-top:13px;font-size:.68rem}
 @media(max-width:767.98px){.certificate-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),330px));gap:14px}.certificate-info{padding:16px}}
+
+/* Current section indicator */
+.navbar .nav-link.active{border-radius:6px;background:#e8f2ed;color:#145c4b!important;font-weight:800}
+.navbar .nav-link:focus-visible{outline:2px solid #167a67;outline-offset:2px}

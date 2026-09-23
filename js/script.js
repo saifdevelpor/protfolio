@@ -410,3 +410,33 @@ if (certificateDialog) {
   });
 }
 
+
+// Keep the current section visible in the sticky navigation.
+const sectionNavLinks = [...document.querySelectorAll(".navbar .nav-link[href^='#']")];
+const sectionNavTargets = sectionNavLinks
+  .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
+  .filter((item) => item.section);
+let navUpdatePending = false;
+function updateCurrentSection() {
+  navUpdatePending = false;
+  const markerY = Math.min(window.innerHeight * 0.34, 280);
+  let current = sectionNavTargets[0];
+  sectionNavTargets.forEach((item) => {
+    if (item.section.getBoundingClientRect().top <= markerY) current = item;
+  });
+  sectionNavTargets.forEach((item) => {
+    const active = item === current;
+    item.link.classList.toggle("active", active);
+    if (active) item.link.setAttribute("aria-current", "location");
+    else item.link.removeAttribute("aria-current");
+  });
+}
+function scheduleCurrentSectionUpdate() {
+  if (!navUpdatePending) {
+    navUpdatePending = true;
+    window.requestAnimationFrame(updateCurrentSection);
+  }
+}
+window.addEventListener("scroll", scheduleCurrentSectionUpdate, { passive: true });
+window.addEventListener("resize", scheduleCurrentSectionUpdate);
+updateCurrentSection();
