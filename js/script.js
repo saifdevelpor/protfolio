@@ -1,4 +1,4 @@
-﻿/**
+/**
  * M Saif Ali - Portfolio
  * Smooth scroll, theme toggle, scroll reveal, counters, project modal, filters
  */
@@ -16,7 +16,7 @@
         const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({ behavior: "smooth", block: "start" });
-          const navbarCollapse = document.getElementById("navbarNav");
+          const navbarCollapse = document.getElementById("siteNav");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
             const bsCollapse =
               bootstrap.Collapse.getInstance(navbarCollapse) ||
@@ -440,3 +440,28 @@ function scheduleCurrentSectionUpdate() {
 window.addEventListener("scroll", scheduleCurrentSectionUpdate, { passive: true });
 window.addEventListener("resize", scheduleCurrentSectionUpdate);
 updateCurrentSection();
+
+// On mobile, finish closing the expanded navigation before scrolling to a section.
+const mobileSectionNav = document.getElementById("siteNav");
+if (mobileSectionNav && window.bootstrap) {
+  let pendingMobileSection = null;
+  mobileSectionNav.addEventListener("hidden.bs.collapse", () => {
+    if (pendingMobileSection) {
+      pendingMobileSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      pendingMobileSection = null;
+    }
+  });
+  mobileSectionNav.querySelectorAll("a[href^='#']").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (!window.matchMedia("(max-width: 991.98px)").matches || !mobileSectionNav.classList.contains("show")) return;
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      event.preventDefault();
+      pendingMobileSection = target;
+      if (window.location.hash !== link.getAttribute("href")) {
+        window.history.pushState(null, "", link.getAttribute("href"));
+      }
+      window.bootstrap.Collapse.getOrCreateInstance(mobileSectionNav).hide();
+    });
+  });
+}
