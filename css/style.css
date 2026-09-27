@@ -265,3 +265,42 @@
 .review-author small{margin-top:2px;color:var(--muted);font-size:.64rem}
 @media(max-width:991.98px){.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767.98px){.reviews-grid{grid-template-columns:1fr}.review-card{min-height:0}}
+
+/* App development learning focus */
+.hero-tech .hero-learning-label{display:block;margin-top:12px;color:var(--green);font-size:.6rem;font-weight:800;letter-spacing:.13em}
+.stack-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stack-status{display:inline-block;margin:12px 0 0;padding:4px 7px;border-radius:4px;background:#eaf3ee;color:#145c4b;font-size:.53rem;font-weight:800;letter-spacing:.08em}
+.app-learning-card{border-color:#c9ded3;background:linear-gradient(145deg,#fff,#f4f8f5)}
+.app-learning-card h3{margin-top:9px}
+.app-learning-card>p{margin:-7px 0 13px;color:var(--muted);font-size:.68rem;line-height:1.55}
+@media(max-width:991.98px){.stack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Mobile app project cards */
+.app-project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),340px));align-items:start;gap:18px}
+.app-project-card .app-project-image{display:grid;place-items:center;height:390px;padding:18px;background:linear-gradient(145deg,#e6eeea,#f5f7f6)}
+.app-project-card .app-project-image img{width:auto;height:100%;max-width:100%;max-height:100%;object-fit:contain;border:3px solid #26342f;border-radius:23px;box-shadow:0 12px 30px rgba(20,42,34,.2);transition:transform .25s ease}
+.app-project-card:hover .app-project-image img{transform:translateY(-3px)}
+@media(max-width:480px){.app-project-grid{grid-template-columns:minmax(0,1fr)}.app-project-card .app-project-image{height:360px}}
+
+/* Keep the app preview and its project details in separate card rows */
+.app-project-card{display:flex!important;flex-direction:column!important;align-items:stretch;position:relative;isolation:isolate}
+.app-project-card .app-project-image{display:flex!important;position:relative;inset:auto;flex:0 0 390px;width:100%;height:390px;margin:0;align-items:center;justify-content:center;overflow:hidden}
+.app-project-card .app-project-image img{position:static!important;inset:auto!important;display:block;flex:0 1 auto;width:auto;height:100%;max-width:100%;max-height:100%;margin:0;object-fit:contain}
+.app-project-card>.project-content{position:relative;inset:auto;z-index:1;display:block;flex:0 0 auto;width:100%;height:auto;margin:0;background:#fff;clear:both}
+@media(max-width:480px){.app-project-card .app-project-image{flex-basis:360px;height:360px}}
+
+/* In-page enlarged app screenshot */
+.app-project-card .app-project-image{border:0;cursor:zoom-in}
+.app-open-screenshot{padding:0;border:0;background:transparent;font:inherit;cursor:zoom-in}
+.app-screenshot-dialog{position:relative;width:fit-content;max-width:96vw;max-height:94vh;padding:42px 14px 14px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:#102d2a;box-shadow:0 25px 90px rgba(0,0,0,.38)}
+.app-screenshot-dialog::backdrop{background:rgba(6,18,16,.82);backdrop-filter:blur(4px)}
+.app-screenshot-dialog img{display:block;max-width:92vw;max-height:85vh;width:auto;height:auto;object-fit:contain;border-radius:4px}
+.app-screenshot-close{position:absolute;top:7px;right:8px;display:grid;place-items:center;width:29px;height:29px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(255,255,255,.1);color:#fff;cursor:pointer}
+
+/* App and certificate image previews use the same scroll-preserving modal behavior as projects */
+.media-preview-modal .modal-dialog{width:fit-content;max-width:96vw;margin:.5rem auto}
+.media-preview-modal .modal-content{position:relative;width:fit-content;max-width:96vw;border:0;background:#102d2a;box-shadow:0 25px 90px rgba(0,0,0,.38)}
+.media-preview-modal .modal-body{display:grid;place-items:center;padding:42px 14px 14px}
+.media-preview-modal .modal-body img{display:block;width:auto;height:auto;max-width:92vw;max-height:85vh;object-fit:contain;border-radius:4px}
+.media-preview-close{position:absolute;z-index:2;top:7px;right:8px;display:grid;place-items:center;width:29px;height:29px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(255,255,255,.1);color:#fff;cursor:pointer}
+.media-preview-modal .modal-content:before{position:fixed;inset:0;z-index:-1;content:"";background:rgba(6,18,16,.82);backdrop-filter:blur(4px)}

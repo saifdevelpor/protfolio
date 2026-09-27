@@ -399,16 +399,6 @@ document.querySelectorAll(".project-card").forEach(function (card) {
 });
 
 
-const certificateDialog = document.getElementById("certificateDialog");
-if (certificateDialog) {
-  document.querySelectorAll(".certificate-preview, .certificate-link").forEach((button) => {
-    button.addEventListener("click", () => certificateDialog.showModal());
-  });
-  certificateDialog.querySelector(".certificate-close").addEventListener("click", () => certificateDialog.close());
-  certificateDialog.addEventListener("click", (event) => {
-    if (event.target === certificateDialog) certificateDialog.close();
-  });
-}
 
 
 // Keep the current section visible in the sticky navigation.
@@ -465,3 +455,4 @@ if (mobileSectionNav && window.bootstrap) {
     });
   });
 }
+
